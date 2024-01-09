@@ -1,6 +1,4 @@
-# README.md for Mohawk-ReDefined Repository
-
-## Welcome to the Mohawk Re-Defined Club Website Repository!
+# Welcome to the Mohawk Re-Defined Club Website Repository!
 
 This repository `mohawk-redefined` is dedicated to the development of the Mohawk Re-Defined Club Website, a platform aimed at enhancing the career development opportunities for Mohawk College students, especially those from marginalized communities.
 
