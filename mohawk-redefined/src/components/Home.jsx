@@ -1,55 +1,80 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ImageCarousel from "./ImageCarousel";
 import TextImage from "./TextImage";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+  const recentActivityImages = [
+    "anchor-2.jpg",
+    "hackathon-og.jpg",
+    "redefined-group.jpg",
+  ];
+
+  const aboutUsContent = {
+    title: "About Us",
+    description: `
+      Mohawk Re-Defined Club, in collaboration with the Re-Defined non-profit,
+      focuses on empowering students, especially students from marginalized communities
+      like the BIPOC community and International Students. Our primary goal is to
+      establish a nurturing community where students can collaborate and uplift one another.
+      Our focus is on creating a space for mutual support rather than striving to be experts,
+      emphasizing the power of students helping each other succeed.
+    `,
+    imageUrl: "./assets/Redefined-logo-new.png",
+    imageOnLeft: true,
+  };
+
+  const eventsContent = {
+    title: "Events",
+    description: `
+    Embark on a transformative journey with Mohawk Redefined, where we strive to empower individuals
+    through education, opportunities, and community engagement. Stay tuned for our upcoming events
+    that are meticulously crafted to inspire and foster growth. Join us on this exciting venture,
+    as we collectively redefine our future. Be part of a community that values inclusivity, learning,
+    and making a positive impact. Together, let's shape a future where everyone has the chance to thrive.
+    Join Mohawk Redefined and be part of something extraordinary!
+    `,
+    imageUrl: "./assets/og-group.jpg",
+    imageOnLeft: false,
   };
 
   return (
-    <div>
-      <section className="mb-8">
-        <h2 className="text-3xl font-bold mb-4 text-center mt-4">
-          Recent Activity
-        </h2>
-        <div className="max-w-3xl mx-auto">
-          <Slider {...sliderSettings}>
-            <div className="w-full h-800">
-              <img
-                src="./assets/college-friends.jpg"
-                alt="Slide 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full h-800">
-              <img
-                src="./assets/resume-building.jpg"
-                alt="Slide 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full h-800">
-              <img
-                src="./assets/group-discussion.jpg"
-                alt="Slide 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Slider>
-        </div>
-      </section>
-      <section>
-        <TextImage />
-      </section>
-    </div>
+    <>
+      <div>
+        <section className="container mx-auto mb-8 h-auto">
+          <div className="max-w-3xl mx-auto mt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <ImageCarousel images={recentActivityImages} />
+            </motion.div>
+          </div>
+        </section>
+        <section className="mb-10">
+          <a href="/About">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <TextImage {...aboutUsContent} />
+            </motion.div>
+          </a>
+        </section>
+        <section className="mr-10 mb-10">
+          <a href="/Events">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <TextImage {...eventsContent} />
+            </motion.div>
+          </a>
+        </section>
+      </div>
+    </>
   );
 };
 

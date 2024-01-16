@@ -1,0 +1,54 @@
+
+
+@keyframes slideIn {
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Apply mobile menu styles */
+  .lg\\:hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 51;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  
+  .lg\\:hidden ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lg\\:hidden li {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .lg\\:hidden button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 52;
+    animation: slideOut 0.3s ease-in-out;
+  }
+  
