@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Events from "./components/Events";
 import Resources from "./components/Resources";
+import EventsData from "./components/EventsData";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/events" element={<EventsData />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/resources" element={<Resources />} />

@@ -1,46 +1,29 @@
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
-const About = () => {
+const Section = ({ title, description, image, extra }) => {
   return (
-    <div className="container mx-auto py-8">
-      <AboutClubSection />
-      <MissionSection />
-      <HistorySection />
-      <TeamSection />
-      <CollaborationSection />
-      <SuccessStoriesSection />
-      <TestimonialsSection />
-    </div>
-  );
-};
-
-const Section = ({ title, description, image, isOdd }) => {
-  const isWhiteBackground = !isOdd;
-
-  return (
-    <section
-      className={`mb-8 ${
-        isWhiteBackground ? "bg-white" : "bg-gray-200"
-      } p-6 rounded-lg shadow-md`}
+    <motion.section
+      className="mb-8 bg-gray-200 p-6 rounded-lg shadow-md mx-2"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col md:flex-row items-center">
-        <div
-          className={`order-${
-            isWhiteBackground ? "1" : "2"
-          } md:w-1/2 mb-4 md:mb-0 md:mr-${isWhiteBackground ? "0" : "4"}`}
-        >
+        <div className="md:w-1/2 mb-4 md:mb-0 md:mr-4 ">
           <img
             src={image}
             alt={title}
-            className="w-full h-auto object-contain rounded-md max-h-40"
+            className="w-full h-auto object-contain rounded-md max-h-80"
           />
         </div>
-        <div className={`order-${isWhiteBackground ? "2" : "1"} md:w-1/2`}>
+        <div className="md:w-1/2">
           <h2 className="text-3xl font-semibold mb-4">{title}</h2>
           <p className="text-gray-800 text-justify">{description}</p>
+          {extra && <div className="mt-4">{extra}</div>}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
@@ -48,17 +31,15 @@ Section.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  isOdd: PropTypes.bool.isRequired,
+  extra: PropTypes.node,
 };
 
 const AboutClubSection = () => {
   return (
     <Section
-      title="About Mohawk Re-Defined Club"
-      description="Re-Defined is non-profit started in January, 2022 with the goal of empowering people from marginalized communities especially BIPOC community and international students. The main ways in which we hope to empower the youth is via provision of access to education, opportunities and necessary resources. Our education comes in the form of workshops which cater to topics raging from social issues like menstrual and sexual education, awareness around sexual abuse, climate and sustainability to skill/career based topics like entrepreneurship, leadership, marketing and financial literacy more to also topics such as health literary and more. We couple these with provisions of access to opportunities in the form of events, mentorship programs, networking, fellowship opportunities and community engagement and provision for access to resources such as those of menstrual products, school supplies and more. 
-      Through this work we have been able to impact around 20,000 people in the last 1.5 years across 4 countries: India (Pune, Mumbai, Delhi & Karnataka), Canada (Vancouver Halifax & Toronto), and Uganda and Ghana. We have also conducted 25+ events in the last 6 months for more than 1000 students in Canada and India to further building of skills and confidence among the youth and thus, empowering them to become write-off their own story and get the access to role models that guide them to do so."
-      image="./assets/redefined-logo.png"
-      isOdd={true}
+      title="Mohawk Re-Defined Club: Shaping Student Careers Together"
+      description="Mohawk Re-Defined Club, in collaboration with the Re-Defined non-profit, focuses on empowering students, especially students from marginalized communities like the BIPOC community and International Students. Our primary goal is to establish a nurturing community where students can collaborate and uplift one another. Our focus is on creating a space for mutual support rather than striving to be experts, emphasizing the power of students helping each other succeed."
+      image="./assets/Redefined-logo-new.png"
     />
   );
 };
@@ -67,65 +48,57 @@ const MissionSection = () => {
   return (
     <Section
       title="Our Mission"
-      description="Your mission content here."
-      image="/path/to/your/image2.jpg"
-      isOdd={false}
+      description="Our primary goal is to establish a nurturing community where students can collaborate and uplift one another. Our focus is on creating a space for mutual support rather than striving to be experts, emphasizing the power of students helping each other succeed."
+      image="./assets/redefined-group2.jpg"
     />
   );
 };
 
-const HistorySection = () => {
+const ImpactInitiativesSection = () => {
   return (
     <Section
-      title="About Mohawk Re-Defined Club"
-      description="Your about content here."
-      image="/path/to/your/image1.jpg"
-      isOdd={true}
+      title="Impact and Initiatives"
+      description="Mohawk Re-Defined Club undertakes various initiatives to empower students and create a supportive community. Some of our key initiatives include:"
+      image="./assets/redefined-group.jpg"
+      extra={
+        <ul className="list-disc ml-6">
+          <li>
+            <strong>Career Development Workshops:</strong> Tailored workshops
+            that cover essential topics like resume building, interview skills,
+            personal branding, and navigating the job market. These workshops
+            are specifically designed to address the needs and aspirations of
+            Mohawk students.
+          </li>
+          <li>
+            <strong>Industry Insight Sessions:</strong> Regular events featuring
+            professionals from various industries, offering students first-hand
+            insights into different career paths and the skills required for
+            success.
+          </li>
+          <li>
+            <strong>Mentorship and Networking:</strong>Facilitating connections
+            with industry mentors and creating networking opportunities,
+            enabling students to build valuable professional relationships and
+            gain practical advice.
+          </li>
+          <li>
+            <strong>Skill Enhancement Programs:</strong>Focused sessions on
+            leadership, entrepreneurship, and financial literacy to prepare
+            students for diverse career paths and entrepreneurial ventures.
+          </li>
+        </ul>
+      }
     />
   );
 };
 
-const TeamSection = () => {
+const About = () => {
   return (
-    <Section
-      title="About Mohawk Re-Defined Club"
-      description="Your about content here."
-      image="/path/to/your/image1.jpg"
-      isOdd={true}
-    />
-  );
-};
-
-const CollaborationSection = () => {
-  return (
-    <Section
-      title="About Mohawk Re-Defined Club"
-      description="Your about content here."
-      image="/path/to/your/image1.jpg"
-      isOdd={true}
-    />
-  );
-};
-
-const SuccessStoriesSection = () => {
-  return (
-    <Section
-      title="About Mohawk Re-Defined Club"
-      description="Your about content here."
-      image="/path/to/your/image1.jpg"
-      isOdd={true}
-    />
-  );
-};
-
-const TestimonialsSection = () => {
-  return (
-    <Section
-      title="About Mohawk Re-Defined Club"
-      description="Your about content here."
-      image="/path/to/your/image1.jpg"
-      isOdd={true}
-    />
+    <div className="container mx-auto py-8">
+      <AboutClubSection />
+      <MissionSection />
+      <ImpactInitiativesSection />
+    </div>
   );
 };
 
