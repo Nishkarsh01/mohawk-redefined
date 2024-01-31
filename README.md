@@ -4,11 +4,11 @@ This repository `mohawk-redefined` is dedicated to the development of the Mohawk
 
 ### Website Features:
 #### To Do
-- [ ] **5.1 Home Page:** A welcoming interface with easy navigation, featuring highlights of recent activities, upcoming events, and quick access to important resources.
-- [ ] **5.2 About Page:** Provides detailed information about the Mohawk Re-Defined Club, including its mission, history, team members, and collaboration details. It also features success stories and testimonials from students.
-- [ ] **5.3 Contact Us Page:** A section for visitors to make inquiries or provide feedback, including a contact form and essential contact details.
-- [ ] **5.4 Events Page:** Lists all upcoming and past events, workshops, and sessions with comprehensive details.
-- [ ] **5.5 Resource Library:** A curated collection of career development materials, articles, guides, and videos.
+- [x] **5.1 Home Page:** A welcoming interface with easy navigation, featuring highlights of recent activities, upcoming events, and quick access to important resources.
+- [x] **5.2 About Page:** Provides detailed information about the Mohawk Re-Defined Club, including its mission, history, team members, and collaboration details. It also features success stories and testimonials from students.
+- [x] **5.3 Contact Us Page:** A section for visitors to make inquiries or provide feedback, including a contact form and essential contact details.
+- [x] **5.4 Events Page:** Lists all upcoming and past events, workshops, and sessions with comprehensive details.
+- [x] **5.5 Resource Library:** A curated collection of career development materials, articles, guides, and videos.
 
 ### Contributing to This Repository:
 
